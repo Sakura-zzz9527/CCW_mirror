@@ -32,6 +32,7 @@ CCW Mirror是一个综合性AI服务聚合平台，旨在为用户提供一站�
 - **缓存**: Redis
 - **日志管理**: Loguru
 - **API请求**: httpx
+- **测试**: Pytest
 
 ### 数据库
 - **关系型数据库**: MySQL
@@ -65,10 +66,11 @@ CCW Mirror是一个综合性AI服务聚合平台，旨在为用户提供一站�
 ## 🚀 项目进度
 
 - [x] 项目初始化
-- [ ] 系统设计与架构
-- [ ] 前端框架搭建
-- [ ] 后端API设计
-- [ ] 数据库表结构设计
+- [x] 系统设计与架构
+- [x] 前端框架搭建
+- [x] 后端API设计
+- [x] 数据库表结构设计
+- [x] 测试框架集成
 - [ ] OpenAI接口集成
 - [ ] Claude接口集成
 - [ ] 用户认证系统
@@ -121,6 +123,25 @@ cd back-end
 alembic upgrade head
 ```
 
+### 运行测试
+
+```bash
+# 进入后端目录
+cd back-end
+
+# 运行所有测试
+run_tests.bat all
+
+# 仅运行数据库测试
+run_tests.bat db
+
+# 仅运行API测试
+run_tests.bat api
+
+# 运行Pytest框架测试
+run_tests.bat pytest
+```
+
 ## 🔐 环境变量配置
 
 前端环境变量 (.env):
@@ -137,6 +158,23 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 OPENAI_API_KEY=your_openai_api_key
 ANTHROPIC_API_KEY=your_anthropic_api_key
 ```
+
+## 📊 测试覆盖
+
+项目包含完整的测试套件，测试组件包括：
+
+- 数据库连接测试
+- API端点功能测试
+- 前端组件单元测试
+
+有关测试的详细信息，请参阅 `back-end/tests/README.md`。
+
+## 🔄 最近更新
+
+- 增强测试框架，添加pytest支持
+- 优化测试运行脚本和配置
+- 移除冗余SQL配置文件
+- 更新文档和测试说明
 
 ## 👥 贡献指南
 
